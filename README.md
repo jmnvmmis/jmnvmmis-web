@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪙 JM NVMMIS - Catálogo de Monedas Raras
 
-## Getting Started
+Catálogo web profesional para la venta de monedas raras y coleccionables, construido con Next.js 15, React 19, Firebase y Tailwind CSS.
 
-First, run the development server:
+## ✨ Características
+
+- 🌍 **Sistema multiidioma** (Español, Inglés, Portugués)
+- 🌓 **Tema claro/oscuro** con persistencia
+- 🖼️ **Carrusel de imágenes** interactivo
+- 🔥 **Firebase Firestore** para base de datos en tiempo real
+- 📱 **Diseño responsive** para todos los dispositivos
+- ⚡ **Next.js 15** con App Router
+- 🎨 **Tailwind CSS** para estilos modernos
+
+## 🚀 Tecnologías
+
+- Next.js 15.1.6
+- React 19
+- TypeScript
+- Firebase 11.1.0
+- i18next para traducciones
+- Tailwind CSS
+
+## 📦 Instalación
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/TU-USUARIO/jmnvmmis-web.git
+
+# Instalar dependencias
+cd jmnvmmis-web
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env.local
+# Editar .env.local con tus credenciales de Firebase
+
+# Ejecutar en desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Configuración
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Crea un proyecto en [Firebase Console](https://console.firebase.google.com)
+2. Copia las credenciales a `.env.local`
+3. Configura Firestore Database
+4. Configura Storage para las imágenes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 Estructura
 
-## Learn More
+```
+jmnvmmis-web/
+├── app/                  # App Router de Next.js
+├── components/           # Componentes reutilizables
+├── lib/                  # Configuración y utilidades
+├── locales/             # Archivos de traducción
+└── public/              # Archivos estáticos
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Páginas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Catálogo Principal** - Lista de todas las monedas disponibles
+- **Detalle de Moneda** - Información completa con carrusel de imágenes
+- **Contacto** - Formulario de contacto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Licencia
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Todos los derechos reservados © 2025 JM NVMMIS

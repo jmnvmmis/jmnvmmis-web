@@ -1,0 +1,70 @@
+{
+  "translation": {
+    "header": {
+      "title": "JM NVMMIS",
+      "subtitle": "Moedas - Medalhas - Notas - Fichas",
+      "catalog": "Catálogo",
+      "contact": "Contato"
+    },
+    "catalog": {
+      "title": "Catálogo de Moedas",
+      "filters": {
+        "all": "Todas as Moedas",
+        "country": "País",
+        "allCountries": "Todos os países"
+      },
+      "noResults": "Nenhuma moeda encontrada",
+      "viewDetails": "Ver Detalhes",
+      "loading": "Carregando moedas..."
+    },
+    "coinDetail": {
+      "backToCatalog": "Voltar ao catálogo",
+      "description": "Descrição",
+      "contactInfo": "Informações de Contato",
+      "contactMessage": "Interessado nesta moeda? Entre em contato conosco para mais informações e disponibilidade.",
+      "email": "EMAIL",
+      "location": "LOCALIZAÇÃO",
+      "locationText": "Buenos Aires, Argentina",
+      "viewMore": "Ver mais moedas",
+      "loading": "Carregando...",
+      "notFound": "Moeda não encontrada",
+      "stock": {
+        "available": "Disponível em estoque",
+        "units": "unidades disponíveis",
+        "unit": "unidade disponível",
+        "lastUnits": "Últimas unidades!",
+        "only": "Apenas",
+        "outOfStock": "Sem estoque",
+        "contactForAvailability": "Entre em contato para consultar disponibilidade futura"
+      }
+    },
+    "contact": {
+      "title": "Contato",
+      "subtitle": "Estamos aqui para ajudá-lo",
+      "info": "Informações de Contato",
+      "whatsapp": "WhatsApp",
+      "whatsappText": "Consultar via WhatsApp",
+      "schedule": "Horário de Atendimento",
+      "weekdays": "Segunda a Sexta: 9:00 - 18:00 hs",
+      "saturday": "Sábado: 10:00 - 14:00 hs",
+      "sunday": "Domingo: Fechado",
+      "about": "Sobre JM NVMMIS",
+      "aboutText1": "Somos especialistas em moedas raras e numismática. Oferecemos uma seleção cuidadosa de moedas antigas, raras e de coleção, tanto argentinas quanto internacionais.",
+      "aboutText2": "Cada peça em nosso catálogo é autêntica e foi cuidadosamente selecionada para colecionadores exigentes.",
+      "faq": "Perguntas Frequentes",
+      "faqQ1": "Como posso fazer uma compra?",
+      "faqA1": "Entre em contato por email ou WhatsApp indicando a moeda do seu interesse. Responderemos com disponibilidade e métodos de pagamento.",
+      "faqQ2": "Vocês fazem entregas?",
+      "faqA2": "Sim, fazemos entregas em todo o país. Os custos de envio são calculados de acordo com o destino e peso do pacote.",
+      "faqQ3": "As moedas são autênticas?",
+      "faqA3": "Absolutamente. Todas as nossas moedas são autênticas e cada peça pode ser verificada.",
+      "backToCatalog": "Voltar ao Catálogo"
+    },
+    "footer": {
+      "about": "Especialistas em moedas raras e numismática. Oferecemos uma seleção curada de moedas autênticas para colecionadores.",
+      "links": "Links",
+      "contactTitle": "Contato",
+      "rights": "© 2025 JM NVMMIS. Todos os direitos reservados."
+    }
+  }
+}

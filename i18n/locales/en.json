@@ -1,0 +1,70 @@
+{
+  "translation": {
+    "header": {
+      "title": "JM NVMMIS",
+      "subtitle": "Coins - Medals - Banknotes - Tokens",
+      "catalog": "Catalog",
+      "contact": "Contact"
+    },
+    "catalog": {
+      "title": "Coin Catalog",
+      "filters": {
+        "all": "All Coins",
+        "country": "Country",
+        "allCountries": "All countries"
+      },
+      "noResults": "No coins found",
+      "viewDetails": "View Details",
+      "loading": "Loading coins..."
+    },
+    "coinDetail": {
+      "backToCatalog": "Back to catalog",
+      "description": "Description",
+      "contactInfo": "Contact Information",
+      "contactMessage": "Interested in this coin? Contact us for more information and availability.",
+      "email": "EMAIL",
+      "location": "LOCATION",
+      "locationText": "Buenos Aires, Argentina",
+      "viewMore": "View more coins",
+      "loading": "Loading...",
+      "notFound": "Coin not found",
+      "stock": {
+        "available": "Available in stock",
+        "units": "units available",
+        "unit": "unit available",
+        "lastUnits": "Last units!",
+        "only": "Only",
+        "outOfStock": "Out of stock",
+        "contactForAvailability": "Contact us to check future availability"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "We are here to help you",
+      "info": "Contact Information",
+      "whatsapp": "WhatsApp",
+      "whatsappText": "Consult via WhatsApp",
+      "schedule": "Business Hours",
+      "weekdays": "Monday to Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturday: 10:00 AM - 2:00 PM",
+      "sunday": "Sunday: Closed",
+      "about": "About JM NVMMIS",
+      "aboutText1": "We are specialists in rare coins and numismatics. We offer a carefully curated selection of antique, rare, and collectible coins, both Argentine and international.",
+      "aboutText2": "Every piece in our catalog is authentic and has been carefully selected for discerning collectors.",
+      "faq": "Frequently Asked Questions",
+      "faqQ1": "How can I make a purchase?",
+      "faqA1": "Contact us by email or WhatsApp indicating the coin of your interest. We will respond with availability and payment methods.",
+      "faqQ2": "Do you ship?",
+      "faqA2": "Yes, we ship throughout the country. Shipping costs are calculated according to destination and package weight.",
+      "faqQ3": "Are the coins authentic?",
+      "faqA3": "Absolutely. All our coins are authentic and each piece can be verified.",
+      "backToCatalog": "Back to Catalog"
+    },
+    "footer": {
+      "about": "Specialists in rare coins and numismatics. We offer a curated selection of authentic coins for collectors.",
+      "links": "Links",
+      "contactTitle": "Contact",
+      "rights": "© 2025 JM NVMMIS. All rights reserved."
+    }
+  }
+}
