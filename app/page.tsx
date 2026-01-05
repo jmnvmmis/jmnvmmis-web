@@ -11,10 +11,19 @@ import Link from 'next/link';
 import CustomSelect from '../components/CustomSelect';
 import { useEffect, useState } from 'react';
 
+type Moneda = {
+  id: string;
+  nombre: string;
+  pais?: string;
+  imagenes?: { url: string }[];
+  precio?: number;
+  stock?: number;
+};
+
 export default function Home() {
   const { t, i18n } = useTranslation();
-  const [monedas, setMonedas] = useState([]);
-  const [monedasFiltradas, setMonedasFiltradas] = useState([]);
+  const [monedas, setMonedas] = useState<Moneda[]>([]);
+  const [monedasFiltradas, setMonedasFiltradas] = useState<Moneda[]>([]);
   const [busqueda, setBusqueda] = useState('');
   const [filtroPais, setFiltroPais] = useState('todos');
   const [loading, setLoading] = useState(true);
