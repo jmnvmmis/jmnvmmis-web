@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import ThemeToggle from '@/app/components/ThemeToggle';
 import LanguageSelector from '@/components/LanguageSelector';
+import Logo from '@/components/Logo';
 import ImageCarousel from '@/app/components/ImageCarousel';
 
 export default function DetalleMoneda() {
@@ -24,7 +25,7 @@ export default function DetalleMoneda() {
     
     const updateBgColor = () => {
       const isDark = document.documentElement.classList.contains('dark');
-      setBgColor(isDark ? '#111827' : '#ffffff');
+      setBgColor(isDark ? '#111827' : '#FFFBEB');
     };
     
     updateBgColor();
@@ -81,28 +82,17 @@ export default function DetalleMoneda() {
       style={{ backgroundColor: bgColor }}
     >
       {/* Header unificado */}
-      <header className="bg-gradient-to-b from-black to-gray-900 shadow-lg transition-colors">
-        <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <div className="cursor-pointer text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold font-display text-white tracking-wider">
-                JM NVMMIS
-              </h1>
-              <div className="mt-2 flex items-center justify-center md:justify-start gap-2">
-                <div className="h-px bg-amber-500 w-12"></div>
-                <p className="text-sm text-amber-400 tracking-[0.2em] uppercase font-light">
-                  {t('header.subtitle')}
-                </p>
-                <div className="h-px bg-amber-500 w-12"></div>
-              </div>
-            </div>
+      <header className="bg-gradient-to-r from-amber-100 to-amber-50 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 shadow-lg transition-colors">
+        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <Link href="/" className="flex-shrink-0">
+            <Logo variant="full" />
           </Link>
           <div className="flex items-center gap-3">
             <LanguageSelector />
             <ThemeToggle />
             <Link
               href="/contacto"
-              className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="bg-amber-600 hover:bg-amber-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base"
             >
               {t('header.contact')}
             </Link>
@@ -224,33 +214,33 @@ export default function DetalleMoneda() {
             )}
 
             {/* Información de contacto */}
-            <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl shadow-2xl">
+            <div className="bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:to-black p-8 rounded-2xl shadow-2xl border border-amber-200 dark:border-amber-500/20">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px bg-amber-500 flex-1"></div>
-                <h3 className="text-2xl font-bold font-display text-white">{t('coinDetail.contactInfo')}</h3>
+                <h3 className="text-2xl font-bold font-display text-amber-900 dark:text-white">{t('coinDetail.contactInfo')}</h3>
                 <div className="h-px bg-amber-500 flex-1"></div>
               </div>
 
-              <p className="text-gray-300 mb-6 text-center">
+              <p className="text-amber-800 dark:text-gray-300 mb-6 text-center">
                 {t('coinDetail.contactMessage')}
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-xl">
+                <div className="flex items-center gap-4 bg-amber-50 dark:bg-white/10 p-4 rounded-xl border border-amber-200 dark:border-transparent">
                   <div className="bg-amber-500/20 p-3 rounded-lg">
                     <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs text-amber-400 uppercase tracking-wider font-semibold mb-1">{t('coinDetail.email')}</p>
-                    <a href="mailto:jmnvmmis@gmail.com" className="text-white hover:text-amber-400 transition text-lg font-medium">
+                    <p className="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-wider font-semibold mb-1">{t('coinDetail.email')}</p>
+                    <a href="mailto:jmnvmmis@gmail.com" className="text-amber-900 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition text-lg font-medium">
                       jmnvmmis@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-xl">
+                <div className="flex items-center gap-4 bg-amber-50 dark:bg-white/10 p-4 rounded-xl border border-amber-200 dark:border-transparent">
                   <div className="bg-amber-500/20 p-3 rounded-lg">
                     <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -258,8 +248,8 @@ export default function DetalleMoneda() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs text-amber-400 uppercase tracking-wider font-semibold mb-1">{t('coinDetail.location')}</p>
-                    <p className="text-white text-lg font-medium">{t('coinDetail.locationText')}</p>
+                    <p className="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-wider font-semibold mb-1">{t('coinDetail.location')}</p>
+                    <p className="text-amber-900 dark:text-white text-lg font-medium">{t('coinDetail.locationText')}</p>
                   </div>
                 </div>
               </div>
@@ -277,39 +267,39 @@ export default function DetalleMoneda() {
       </main>
 
       {/* Footer unificado */}
-      <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-amber-500/30 mt-16">
+      <footer className="bg-amber-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black border-t border-amber-300 dark:border-amber-500/30 mt-16">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mb-8"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">JM NVMMIS</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {t('footer.about')}
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Logo, título y subtítulo - ocupa más espacio */}
+            <div className="md:col-span-6">
+              <Logo variant="full" />
             </div>
 
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">{t('footer.links')}</h3>
+            {/* Enlaces rápidos */}
+            <div className="md:col-span-3">
+              <h3 className="font-bold font-display text-xl text-amber-900 dark:text-white mb-4">{t('footer.links')}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/" className="text-gray-400 hover:text-amber-400 transition">
+                  <Link href="/" className="text-amber-700 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition">
                     {t('header.catalog')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contacto" className="text-gray-400 hover:text-amber-400 transition">
+                  <Link href="/contacto" className="text-amber-700 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition">
                     {t('header.contact')}
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">{t('footer.contactTitle')}</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+            {/* Contacto */}
+            <div className="md:col-span-3">
+              <h3 className="font-bold font-display text-xl text-amber-900 dark:text-white mb-4">{t('footer.contactTitle')}</h3>
+              <ul className="space-y-2 text-sm text-amber-700 dark:text-gray-400">
                 <li>
-                  <a href="mailto:jmnvmmis@gmail.com" className="hover:text-amber-400 transition">
+                  <a href="mailto:jmnvmmis@gmail.com" className="hover:text-amber-600 dark:hover:text-amber-400 transition">
                     jmnvmmis@gmail.com
                   </a>
                 </li>
@@ -318,8 +308,8 @@ export default function DetalleMoneda() {
             </div>
           </div>
 
-          <div className="border-t border-amber-500/30 mt-8 pt-8 text-center">
-            <p className="text-sm text-gray-500">
+          <div className="border-t border-amber-300 dark:border-amber-500/30 mt-8 pt-8 text-center">
+            <p className="text-sm text-amber-600 dark:text-gray-500">
               {t('footer.rights')}
             </p>
           </div>

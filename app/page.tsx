@@ -4,9 +4,11 @@
 import { useTranslation } from 'react-i18next';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from '../components/LanguageSelector';
+import Logo from '../components/Logo';
 import { obtenerMonedasPublicas } from '@/lib/firestore';
 import Image from 'next/image';
 import Link from 'next/link';
+import CustomSelect from '../components/CustomSelect';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -26,7 +28,7 @@ export default function Home() {
     // Función para actualizar el color de fondo
     const updateBgColor = () => {
       const isDark = document.documentElement.classList.contains('dark');
-      setBgColor(isDark ? '#111827' : '#ffffff');
+      setBgColor(isDark ? '#111827' : '#FFFBEB');
     };
     
     updateBgColor();
@@ -79,9 +81,9 @@ export default function Home() {
   // Evitar hidratación mientras i18n se inicializa
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-stone-50 transition-colors">
+      <div className="min-h-screen bg-amber-50 dark:bg-gray-900 transition-colors">
         <div className="flex items-center justify-center min-h-screen">
-          <div className="text-gray-600">Loading...</div>
+          <div className="text-amber-700 dark:text-gray-400">Loading...</div>
         </div>
       </div>
     );
@@ -93,28 +95,17 @@ export default function Home() {
       style={{ backgroundColor: bgColor }}
     >
       {/* Header con diseño elegante */}
-      <header className="bg-gradient-to-b from-black to-gray-900 shadow-lg transition-colors">
-        <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <div className="cursor-pointer text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold font-display text-white tracking-wider">
-                JM NVMMIS
-              </h1>
-              <div className="mt-2 flex items-center justify-center md:justify-start gap-2">
-                <div className="h-px bg-amber-500 w-12"></div>
-                <p className="text-sm text-amber-400 tracking-[0.2em] uppercase font-light">
-                  {t('header.subtitle')}
-                </p>
-                <div className="h-px bg-amber-500 w-12"></div>
-              </div>
-            </div>
+      <header className="bg-gradient-to-r from-amber-100 to-amber-50 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 shadow-lg transition-colors">
+        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <Link href="/" className="flex-shrink-0">
+            <Logo variant="full" />
           </Link>
           <div className="flex items-center gap-3">
             <LanguageSelector />
             <ThemeToggle />
             <Link
               href="/contacto"
-              className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="bg-amber-600 hover:bg-amber-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base"
             >
               {t('header.contact')}
             </Link>
@@ -128,7 +119,7 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         {loading ? (
           <div className="text-center py-16">
-            <p className="text-gray-600 text-lg">{t('catalog.loading')}</p>
+            <p className="text-amber-700 dark:text-gray-600 text-lg">{t('catalog.loading')}</p>
           </div>
         ) : monedas.length === 0 ? (
           <div className="text-center py-16">
@@ -142,12 +133,12 @@ export default function Home() {
         ) : (
           <>
             {/* Barra de búsqueda y filtros mejorada */}
-            <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl shadow-2xl mb-8 border border-amber-500/20">
+            <div className="bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:to-black p-8 rounded-2xl shadow-xl mb-8 border border-amber-200 dark:border-amber-500/20">
               <div className="mb-6">
-                <h2 className="text-3xl font-bold font-display text-white mb-3 tracking-wide">{t('catalog.title')}</h2>
+                <h2 className="text-3xl font-bold font-display text-amber-900 dark:text-white mb-3 tracking-wide">{t('catalog.title')}</h2>
                 <div className="flex items-center gap-3">
                   <div className="h-px bg-amber-500 w-8"></div>
-                  <p className="text-amber-400 font-medium">
+                  <p className="text-amber-700 dark:text-amber-400 font-medium">
                     {monedasFiltradas.length} {monedasFiltradas.length === 1 ? 'moneda disponible' : 'monedas disponibles'}
                   </p>
                   <div className="h-px bg-amber-500 w-8"></div>
@@ -157,7 +148,7 @@ export default function Home() {
               {/* Filtros */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-semibold text-amber-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-sm font-semibold text-amber-700 dark:text-amber-400 mb-2 uppercase tracking-wider">
                     Buscar por nombre
                   </label>
                   <input
@@ -165,33 +156,29 @@ export default function Home() {
                     value={busqueda}
                     onChange={(e) => setBusqueda(e.target.value)}
                     placeholder="Buscar moneda..."
-                    className="w-full px-5 py-3 bg-white/10 backdrop-blur-sm border border-amber-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-gray-400 transition-all"
+                    className="w-full px-5 py-3 bg-amber-50 dark:bg-white/10 backdrop-blur-sm border border-amber-300 dark:border-amber-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-amber-900 dark:text-white placeholder-amber-600 dark:placeholder-gray-400 transition-all"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-semibold text-amber-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-sm font-semibold text-amber-700 dark:text-amber-400 mb-2 uppercase tracking-wider">
                     Filtrar por país
                   </label>
-                  <select
+                  <CustomSelect
                     value={filtroPais}
-                    onChange={(e) => setFiltroPais(e.target.value)}
-                    className="w-full px-5 py-3 bg-white/10 backdrop-blur-sm border border-amber-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white transition-all"
-                  >
-                    <option value="todos" className="bg-gray-900">{t('catalog.filters.allCountries')}</option>
-                    {paisesDisponibles.map((pais) => (
-                      <option key={pais} value={pais} className="bg-gray-900">
-                        {pais}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setFiltroPais}
+                    options={[
+                      { value: 'todos', label: t('catalog.filters.allCountries') },
+                      ...paisesDisponibles.map(pais => ({ value: pais, label: pais }))
+                    ]}
+                  />
                 </div>
               </div>
             </div>
 
             {/* Grid de monedas */}
             {monedasFiltradas.length === 0 ? (
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md text-center border border-amber-200 dark:border-gray-700">
                 <p className="text-gray-500 text-lg">
                   {t('catalog.noResults')}
                   {busqueda && ` con "${busqueda}"`}
@@ -205,7 +192,7 @@ export default function Home() {
                   <Link 
                     key={moneda.id} 
                     href={`/moneda/${moneda.id}`}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group card-hover border border-gray-100"
+                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group card-hover border border-amber-200 dark:border-gray-700"
                   >
                     <div className="aspect-square relative bg-gradient-to-br from-gray-50 to-gray-100">
                       {moneda.imagenes && moneda.imagenes.length > 0 ? (
@@ -224,8 +211,8 @@ export default function Home() {
                       {/* Overlay sutil al hacer hover */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div className="p-4 bg-white">
-                      <h3 className="font-semibold text-sm md:text-base mb-2 line-clamp-2 text-gray-800 group-hover:text-amber-600 transition-colors min-h-[2.5rem]">
+                    <div className="p-4 bg-white dark:bg-gray-800">
+                      <h3 className="font-semibold text-sm md:text-base mb-2 line-clamp-2 text-amber-900 dark:text-white group-hover:text-amber-600 transition-colors min-h-[2.5rem]">
                         {moneda.nombre}
                       </h3>
                       {moneda.pais && (
@@ -264,31 +251,28 @@ export default function Home() {
       </main>
 
       {/* Footer mejorado con identidad de marca */}
-      <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-amber-500/30 mt-16">
+      <footer className="bg-amber-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black border-t border-amber-300 dark:border-amber-500/30 mt-16">
         <div className="max-w-7xl mx-auto px-4 py-12">
           {/* Cenefa griega superior */}
           <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mb-8"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Sobre nosotros */}
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">JM NVMMIS</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {t('footer.about')}
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Logo, título y subtítulo - ocupa más espacio */}
+            <div className="md:col-span-6">
+              <Logo variant="full" />
             </div>
 
             {/* Enlaces rápidos */}
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">{t('footer.links')}</h3>
+            <div className="md:col-span-3">
+              <h3 className="font-bold font-display text-xl text-amber-900 dark:text-white mb-4">{t('footer.links')}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/" className="text-gray-400 hover:text-amber-400 transition">
+                  <Link href="/" className="text-amber-700 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition">
                     {t('header.catalog')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contacto" className="text-gray-400 hover:text-amber-400 transition">
+                  <Link href="/contacto" className="text-amber-700 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition">
                     {t('header.contact')}
                   </Link>
                 </li>
@@ -296,11 +280,11 @@ export default function Home() {
             </div>
 
             {/* Contacto */}
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">{t('footer.contactTitle')}</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+            <div className="md:col-span-3">
+              <h3 className="font-bold font-display text-xl text-amber-900 dark:text-white mb-4">{t('footer.contactTitle')}</h3>
+              <ul className="space-y-2 text-sm text-amber-700 dark:text-gray-400">
                 <li>
-                  <a href="mailto:jmnvmmis@gmail.com" className="hover:text-amber-400 transition">
+                  <a href="mailto:jmnvmmis@gmail.com" className="hover:text-amber-600 dark:hover:text-amber-400 transition">
                     jmnvmmis@gmail.com
                   </a>
                 </li>
@@ -309,8 +293,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-amber-500/30 mt-8 pt-8 text-center">
-            <p className="text-sm text-gray-500">
+          <div className="border-t border-amber-300 dark:border-amber-500/30 mt-8 pt-8 text-center">
+            <p className="text-sm text-amber-600 dark:text-gray-500">
               {t('footer.rights')}
             </p>
           </div>

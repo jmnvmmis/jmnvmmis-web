@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import ThemeToggle from '../components/ThemeToggle';
 import LanguageSelector from '../../components/LanguageSelector';
+import Logo from '../../components/Logo';
 
 export default function Contacto() {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ export default function Contacto() {
     // Función para actualizar el color de fondo
     const updateBgColor = () => {
       const isDark = document.documentElement.classList.contains('dark');
-      setBgColor(isDark ? '#111827' : '#ffffff');
+      setBgColor(isDark ? '#111827' : '#FFFBEB');
     };
     
     // Actualizar al montar
@@ -46,28 +47,17 @@ export default function Contacto() {
       style={{ backgroundColor: bgColor }}
     >
       {/* Header unificado */}
-      <header className="bg-gradient-to-b from-black to-gray-900 shadow-lg transition-colors">
-        <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <div className="cursor-pointer text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold font-display text-white tracking-wider">
-                JM NVMMIS
-              </h1>
-              <div className="mt-2 flex items-center justify-center md:justify-start gap-2">
-                <div className="h-px bg-amber-500 w-12"></div>
-                <p className="text-sm text-amber-400 tracking-[0.2em] uppercase font-light">
-                  {t('header.subtitle')}
-                </p>
-                <div className="h-px bg-amber-500 w-12"></div>
-              </div>
-            </div>
+      <header className="bg-gradient-to-r from-amber-100 to-amber-50 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 shadow-lg transition-colors">
+        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <Link href="/" className="flex-shrink-0">
+            <Logo variant="full" />
           </Link>
           <div className="flex items-center gap-3">
             <LanguageSelector />
             <ThemeToggle />
             <Link
               href="/"
-              className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="bg-amber-600 hover:bg-amber-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base"
             >
               {t('header.catalog')}
             </Link>
@@ -214,31 +204,28 @@ export default function Contacto() {
       </main>
 
       {/* Footer unificado */}
-      <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-amber-500/30 mt-16">
+      <footer className="bg-amber-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black border-t border-amber-300 dark:border-amber-500/30 mt-16">
         <div className="max-w-7xl mx-auto px-4 py-12">
           {/* Cenefa griega superior */}
           <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mb-8"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Sobre nosotros */}
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">JM NVMMIS</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {t('footer.about')}
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Logo, título y subtítulo - ocupa más espacio */}
+            <div className="md:col-span-6">
+              <Logo variant="full" />
             </div>
 
             {/* Enlaces rápidos */}
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">{t('footer.links')}</h3>
+            <div className="md:col-span-3">
+              <h3 className="font-bold font-display text-xl text-amber-900 dark:text-white mb-4">{t('footer.links')}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/" className="text-gray-400 hover:text-amber-400 transition">
+                  <Link href="/" className="text-amber-700 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition">
                     {t('header.catalog')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contacto" className="text-gray-400 hover:text-amber-400 transition">
+                  <Link href="/contacto" className="text-amber-700 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition">
                     {t('header.contact')}
                   </Link>
                 </li>
@@ -246,11 +233,11 @@ export default function Contacto() {
             </div>
 
             {/* Contacto */}
-            <div>
-              <h3 className="font-bold font-display text-xl text-white mb-4">{t('footer.contactTitle')}</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+            <div className="md:col-span-3">
+              <h3 className="font-bold font-display text-xl text-amber-900 dark:text-white mb-4">{t('footer.contactTitle')}</h3>
+              <ul className="space-y-2 text-sm text-amber-700 dark:text-gray-400">
                 <li>
-                  <a href="mailto:jmnvmmis@gmail.com" className="hover:text-amber-400 transition">
+                  <a href="mailto:jmnvmmis@gmail.com" className="hover:text-amber-600 dark:hover:text-amber-400 transition">
                     jmnvmmis@gmail.com
                   </a>
                 </li>
@@ -259,8 +246,8 @@ export default function Contacto() {
             </div>
           </div>
 
-          <div className="border-t border-amber-500/30 mt-8 pt-8 text-center">
-            <p className="text-sm text-gray-500">
+          <div className="border-t border-amber-300 dark:border-amber-500/30 mt-8 pt-8 text-center">
+            <p className="text-sm text-amber-600 dark:text-gray-500">
               {t('footer.rights')}
             </p>
           </div>
