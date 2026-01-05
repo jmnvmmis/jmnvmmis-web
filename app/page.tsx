@@ -81,7 +81,11 @@ export default function Home() {
   };
 
   const obtenerPaisesUnicos = () => {
-    const paisesSet = new Set(monedas.map(m => m.pais).filter(Boolean));
+    const paises = monedas
+      .map(m => m.pais)
+      .filter((p): p is string => typeof p === 'string' && p.length > 0);
+
+    const paisesSet = new Set(paises);
     return Array.from(paisesSet).sort();
   };
 
