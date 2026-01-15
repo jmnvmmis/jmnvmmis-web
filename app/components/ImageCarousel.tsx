@@ -66,16 +66,13 @@ export default function ImageCarousel({ imagenes, nombre }: ImageCarouselProps) 
             </span>
           </div>
 
-          {/* Marca de agua decorativa JM NVMMIS - Tamaño reducido */}
+          {/* Marca de agua decorativa - Logo */}
           <div className="absolute bottom-4 left-4 z-20">
-            <div className="bg-gradient-to-r from-black/70 to-black/50 dark:from-white/80 dark:to-white/60 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-amber-500/40 shadow-lg">
-              <p className="text-sm md:text-base font-display font-bold text-white dark:text-gray-900 tracking-wide flex items-center gap-2">
-                <svg className="w-3 h-3 md:w-4 md:h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.5 8.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM10 13a4 4 0 01-3.464-2h6.928A4 4 0 0110 13z"/>
-                </svg>
-                JM NVMMIS
-              </p>
-            </div>
+            <img
+              src="/logo-jmnvmmis.png"
+              alt="JM NVMMIS"
+              className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-lg dark:invert"
+            />
           </div>
 
           {/* Botones de navegación - Más pequeños */}

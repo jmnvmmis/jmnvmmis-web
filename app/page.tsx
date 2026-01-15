@@ -6,6 +6,8 @@ import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from '../components/LanguageSelector';
 import Logo from '../components/Logo';
 import { obtenerMonedasPublicas } from '@/lib/firestore';
+import { obtenerSimboloMoneda } from '@/lib/monedas';
+import { hashId } from '@/lib/utils/hashId';
 import Image from 'next/image';
 import Link from 'next/link';
 import CustomSelect from '../components/CustomSelect';
@@ -16,7 +18,7 @@ type Moneda = {
   nombre: string;
   pais?: string;
   imagenes?: { url: string }[];
-  precio?: number;
+  precios?: { precio: number; tipo_moneda: string }[];
   stock?: number;
 };
 
@@ -204,7 +206,7 @@ export default function Home() {
                 {monedasFiltradas.map((moneda) => (
                   <Link 
                     key={moneda.id} 
-                    href={`/moneda/${moneda.id}`}
+                    href={`/moneda/${hashId(moneda.id)}`}
                     className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group card-hover border border-amber-200 dark:border-gray-700"
                   >
                     <div className="aspect-square relative bg-gradient-to-br from-gray-50 to-gray-100">
@@ -236,24 +238,37 @@ export default function Home() {
                           <span className="text-xs text-gray-500">{moneda.pais}</span>
                         </div>
                       )}
-                      <div className="flex items-center justify-between">
-                        <p className="text-xl md:text-2xl font-bold text-amber-600">
-                          ${moneda.precio?.toLocaleString('es-AR')}
-                        </p>
-                        {moneda.stock !== undefined && (
-                          <div>
-                            {moneda.stock === 0 ? (
-                              <span className="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">
-                                Sin stock
-                              </span>
-                            ) : moneda.stock < 5 ? (
-                              <span className="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-1 rounded-full">
-                                ¡Solo {moneda.stock}!
-                              </span>
-                            ) : null}
+                      
+                      {/* Precios */}
+                      <div className="mb-2">
+                        {moneda.precios && Array.isArray(moneda.precios) && moneda.precios.length > 0 ? (
+                          <div className="flex flex-wrap gap-1">
+                            {moneda.precios.map((precioItem: any, idx: number) => (
+                              <div key={idx} className="text-base md:text-lg font-bold text-amber-600">
+                                {obtenerSimboloMoneda(precioItem.tipo_moneda)}{precioItem.precio?.toLocaleString('es-AR')}
+                                <span className="text-xs text-gray-500 ml-1">{precioItem.tipo_moneda}</span>
+                              </div>
+                            ))}
                           </div>
+                        ) : (
+                          <p className="text-base text-gray-400">Consultar precio</p>
                         )}
                       </div>
+                      
+                      {/* Badge de stock - en su propia fila */}
+                      {moneda.stock !== undefined && (
+                        <div className="mt-2">
+                          {moneda.stock === 0 ? (
+                            <span className="inline-block text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">
+                              Sin stock
+                            </span>
+                          ) : moneda.stock < 5 ? (
+                            <span className="inline-block text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-1 rounded-full whitespace-nowrap">
+                              ¡Solo {moneda.stock}!
+                            </span>
+                          ) : null}
+                        </div>
+                      )}
                     </div>
                   </Link>
                 ))}

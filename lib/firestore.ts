@@ -27,20 +27,29 @@ export const obtenerMonedasPublicas = async () => {
 };
 
 // Obtener moneda por ID
-export const obtenerMonedaPorId = async (id: string) => {
+export const obtenerMonedaPorId = async (id: string | number) => {
   try {
+    // Convertir a número si es string
+    const numericId = typeof id === 'string' ? parseInt(id) : id;
+    
+    console.log('Buscando moneda con ID:', numericId, 'tipo:', typeof numericId);
+    
     const { data, error } = await supabase
       .from('monedas')
       .select('*')
-      .eq('id', id)
+      .eq('id', numericId)
       .eq('activa', true)
       .single();
 
-    if (error) throw error;
-
+    if (error) {
+      console.error('Error de Supabase:', JSON.stringify(error, null, 2));
+      throw error;
+    }
+    
+    console.log('Moneda encontrada:', data);
     return data;
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error obteniendo moneda:', error);
     return null;
   }
 };
