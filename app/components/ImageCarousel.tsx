@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 interface ImageCarouselProps {
-  imagenes: Array<{ url: string; path: string }>;
+  imagenes: Array<{ url: string }>;
   nombre: string;
 }
 
