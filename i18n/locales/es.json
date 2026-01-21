@@ -11,8 +11,15 @@
       "filters": {
         "all": "Todas las Monedas",
         "country": "País",
-        "allCountries": "Todos los países"
+        "allCountries": "Todos los países",
+        "search": "Buscar por nombre",
+        "searchPlaceholder": "Buscar moneda...",
+        "filterByCountry": "Filtrar por país"
       },
+      "coinsAvailable": "monedas disponibles",
+      "coinAvailable": "moneda disponible",
+      "noCoinsAvailable": "No hay monedas disponibles en este momento.",
+      "comeBackSoon": "Vuelve pronto para ver nuestro catálogo.",
       "noResults": "No se encontraron monedas",
       "viewDetails": "Ver Detalles",
       "loading": "Cargando monedas..."
@@ -65,6 +72,10 @@
       "links": "Enlaces",
       "contactTitle": "Contacto",
       "rights": "© 2025 JM NVMMIS. Todos los derechos reservados."
+    },
+    "common": {
+      "select": "Seleccionar...",
+      "loading": "Cargando..."
     }
   }
 }

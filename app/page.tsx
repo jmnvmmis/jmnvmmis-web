@@ -35,7 +35,7 @@ export default function Home() {
     return (
       <div className="min-h-screen bg-amber-50 dark:bg-gray-900 transition-colors">
         <div className="flex items-center justify-center min-h-screen">
-          <div className="text-amber-700 dark:text-gray-400">Loading...</div>
+          <div className="text-amber-700 dark:text-gray-400">{t('common.loading')}</div>
         </div>
       </div>
     );
@@ -58,10 +58,10 @@ export default function Home() {
         ) : monedas.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-gray-500 text-lg">
-              No hay monedas disponibles en este momento.
+              {t('catalog.noCoinsAvailable')}
             </p>
             <p className="text-gray-400 mt-2">
-              Vuelve pronto para ver nuestro catálogo.
+              {t('catalog.comeBackSoon')}
             </p>
           </div>
         ) : (

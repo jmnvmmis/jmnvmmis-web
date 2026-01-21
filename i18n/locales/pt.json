@@ -2,7 +2,7 @@
   "translation": {
     "header": {
       "title": "JM NVMMIS",
-      "subtitle": "Moedas - Medalhas - Notas - Fichas",
+      "subtitle": "Moedas - Medalhas - Cédulas - Fichas",
       "catalog": "Catálogo",
       "contact": "Contato"
     },
@@ -11,8 +11,15 @@
       "filters": {
         "all": "Todas as Moedas",
         "country": "País",
-        "allCountries": "Todos os países"
+        "allCountries": "Todos os países",
+        "search": "Buscar por nome",
+        "searchPlaceholder": "Buscar moeda...",
+        "filterByCountry": "Filtrar por país"
       },
+      "coinsAvailable": "moedas disponíveis",
+      "coinAvailable": "moeda disponível",
+      "noCoinsAvailable": "Nenhuma moeda disponível no momento.",
+      "comeBackSoon": "Volte em breve para ver nosso catálogo.",
       "noResults": "Nenhuma moeda encontrada",
       "viewDetails": "Ver Detalhes",
       "loading": "Carregando moedas..."
@@ -45,15 +52,15 @@
       "whatsapp": "WhatsApp",
       "whatsappText": "Consultar via WhatsApp",
       "schedule": "Horário de Atendimento",
-      "weekdays": "Segunda a Sexta: 9:00 - 18:00 hs",
-      "saturday": "Sábado: 10:00 - 14:00 hs",
+      "weekdays": "Segunda a Sexta: 9:00 - 18:00",
+      "saturday": "Sábado: 10:00 - 14:00",
       "sunday": "Domingo: Fechado",
       "about": "Sobre JM NVMMIS",
-      "aboutText1": "Somos especialistas em moedas raras e numismática. Oferecemos uma seleção cuidadosa de moedas antigas, raras e de coleção, tanto argentinas quanto internacionais.",
-      "aboutText2": "Cada peça em nosso catálogo é autêntica e foi cuidadosamente selecionada para colecionadores exigentes.",
+      "aboutText1": "Somos especialistas em moedas raras e numismática. Oferecemos uma seleção cuidadosa de moedas antigas, raras e colecionáveis, tanto argentinas quanto internacionais.",
+      "aboutText2": "Cada peça do nosso catálogo é autêntica e foi cuidadosamente selecionada para colecionadores exigentes.",
       "faq": "Perguntas Frequentes",
       "faqQ1": "Como posso fazer uma compra?",
-      "faqA1": "Entre em contato por email ou WhatsApp indicando a moeda do seu interesse. Responderemos com disponibilidade e métodos de pagamento.",
+      "faqA1": "Entre em contato por email ou WhatsApp indicando a moeda de seu interesse. Responderemos com disponibilidade e métodos de pagamento.",
       "faqQ2": "Vocês fazem entregas?",
       "faqA2": "Sim, fazemos entregas em todo o país. Os custos de envio são calculados de acordo com o destino e peso do pacote.",
       "faqQ3": "As moedas são autênticas?",
@@ -61,10 +68,14 @@
       "backToCatalog": "Voltar ao Catálogo"
     },
     "footer": {
-      "about": "Especialistas em moedas raras e numismática. Oferecemos uma seleção curada de moedas autênticas para colecionadores.",
+      "about": "Especialistas em moedas raras e numismática. Oferecemos uma seleção cuidadosa de moedas autênticas para colecionadores.",
       "links": "Links",
       "contactTitle": "Contato",
       "rights": "© 2025 JM NVMMIS. Todos os direitos reservados."
+    },
+    "common": {
+      "select": "Selecionar...",
+      "loading": "Carregando..."
     }
   }
 }

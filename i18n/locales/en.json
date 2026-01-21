@@ -11,8 +11,15 @@
       "filters": {
         "all": "All Coins",
         "country": "Country",
-        "allCountries": "All countries"
+        "allCountries": "All countries",
+        "search": "Search by name",
+        "searchPlaceholder": "Search coin...",
+        "filterByCountry": "Filter by country"
       },
+      "coinsAvailable": "coins available",
+      "coinAvailable": "coin available",
+      "noCoinsAvailable": "No coins available at this time.",
+      "comeBackSoon": "Come back soon to see our catalog.",
       "noResults": "No coins found",
       "viewDetails": "View Details",
       "loading": "Loading coins..."
@@ -65,6 +72,10 @@
       "links": "Links",
       "contactTitle": "Contact",
       "rights": "© 2025 JM NVMMIS. All rights reserved."
+    },
+    "common": {
+      "select": "Select...",
+      "loading": "Loading..."
     }
   }
 }
